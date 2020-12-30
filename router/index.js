@@ -1,4 +1,7 @@
 const router = require('koa-router')();
+const getRamdon = require('./getramdon');
+
+router.use('/getramdon', getRamdon.routes());
 
 
 
