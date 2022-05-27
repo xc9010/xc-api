@@ -1,19 +1,21 @@
-const router = require('koa-router')();
+const router = require('koa-router');
 const getRamdon = require('./getramdon');
 const getHooksFromGitee = require('./getHooksFromGitee');
 
-router.use('/getramdon', getRamdon.routes());
+const userRouter = new router({ prefix: '/xc-api' });
 
-router.use('/getHooksFromGitee', getHooksFromGitee.routes());
+userRouter.use('/getramdon', getRamdon.routes());
+
+userRouter.use('/getHooksFromGitee', getHooksFromGitee.routes());
 
 
 
-router.get('/', async ctx => {
-  ctx.body = 'hello xc'
+userRouter.get('/', async ctx => {
+  ctx.body = 'hello xc 123'
 });
 
 
 
 
 
-module.exports = router;
+module.exports = userRouter;
