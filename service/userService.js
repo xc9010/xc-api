@@ -4,7 +4,12 @@ class UserService {
     return {
       code: 200,
       mes: '写入成功',
-      data: {}
+      data: {
+        list: [],
+        page: {
+
+        }
+      }
     }
   }
 }
